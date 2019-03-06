@@ -1,0 +1,39 @@
+<idea-plugin>
+    <id>com.github.vapotapov.plugins.cucumber.kotlin.cucumber-kotlin-plugin</id>
+    <name>Cucumber For Kotlin</name>
+    <vendor url="https://github.com/vapotapov">Vladimir Potapov</vendor>
+
+    <description><![CDATA[
+    This plugin enables Cucumber support for step definitions written in Kotlin.
+    ]]></description>
+
+    <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <!-- uncomment to enable plugin in all products
+    <depends>com.intellij.modules.lang</depends>
+    -->
+
+    <depends>gherkin</depends>
+    <depends>cucumber-java</depends>
+    <depends>org.jetbrains.kotlin</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+<!--        <referencesSearch implementation="com.github.vapotapov.plugins.cucumber.kotlin.steps.search.CucumberKotlinStepDefinitionSearch"/>
+        <methodReferencesSearch
+                implementation="com.github.vapotapov.plugins.cucumber.kotlin.steps.search.CucumberKotlinMethodUsageSearcher"/>-->
+        <!--
+        <runConfigurationProducer implementation="com.github.vapotapov.plugins.cucumber.kotlin.steps.run.CucumberJavaFeatureRunConfigurationProducer"/>
+        <runConfigurationProducer implementation="com.github.vapotapov.plugins.cucumber.kotlin.steps.run.CucumberJavaScenarioRunConfigurationProducer"/>
+        <runConfigurationProducer implementation="com.github.vapotapov.plugins.cucumber.kotlin.steps.run.CucumberJavaAllFeaturesInFolderRunConfigurationProducer"/>-->
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+
+    <extensions defaultExtensionNs="org.jetbrains.plugins.cucumber.steps">
+        <cucumberJvmExtensionPoint
+                implementation="com.github.vapotapov.plugins.cucumber.kotlin.CucumberKotlinExtension"/>
+    </extensions>
+
+</idea-plugin>
