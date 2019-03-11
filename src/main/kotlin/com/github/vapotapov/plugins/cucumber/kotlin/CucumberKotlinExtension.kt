@@ -70,7 +70,7 @@ class CucumberKotlinExtension : AbstractCucumberExtension() {
     }
 
     override fun getGlues(file: GherkinFile, gluesFromOtherFiles: MutableSet<String>?): MutableCollection<String> {
-        var glues = gluesFromOtherFiles ?: ContainerUtil.newHashSet()
+        val glues = gluesFromOtherFiles ?: ContainerUtil.newHashSet()
 
         file.accept(object: GherkinRecursiveElementVisitor(){
             override fun visitStep(step: GherkinStep?) {
@@ -88,7 +88,7 @@ class CucumberKotlinExtension : AbstractCucumberExtension() {
     override fun loadStepsFor(featureFile: PsiFile?, module: Module): MutableList<AbstractStepDefinition> {
         val dependenciesScope = module.getModuleWithDependenciesAndLibrariesScope(true)
 
-        var stepDefAnnotationClass = JavaPsiFacade.getInstance(module.project).findClass(
+        val stepDefAnnotationClass = JavaPsiFacade.getInstance(module.project).findClass(
             CUCUMBER_RUNTIME_JAVA_STEP_DEF_ANNOTATION,
             dependenciesScope
         )

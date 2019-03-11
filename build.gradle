@@ -16,11 +16,6 @@ dependencies {
     compile "junit:junit:4.12"
 }
 
-task copyDeps(type: Copy) {
-    from configurations.compile
-    into 'D:\\libs'
-}
-
 compileKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }

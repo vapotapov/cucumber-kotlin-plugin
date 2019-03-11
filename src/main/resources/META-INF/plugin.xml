@@ -18,13 +18,6 @@
     <depends>org.jetbrains.kotlin</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-<!--        <referencesSearch implementation="com.github.vapotapov.plugins.cucumber.kotlin.steps.search.CucumberKotlinStepDefinitionSearch"/>
-        <methodReferencesSearch
-                implementation="com.github.vapotapov.plugins.cucumber.kotlin.steps.search.CucumberKotlinMethodUsageSearcher"/>-->
-        <!--
-        <runConfigurationProducer implementation="com.github.vapotapov.plugins.cucumber.kotlin.steps.run.CucumberJavaFeatureRunConfigurationProducer"/>
-        <runConfigurationProducer implementation="com.github.vapotapov.plugins.cucumber.kotlin.steps.run.CucumberJavaScenarioRunConfigurationProducer"/>
-        <runConfigurationProducer implementation="com.github.vapotapov.plugins.cucumber.kotlin.steps.run.CucumberJavaAllFeaturesInFolderRunConfigurationProducer"/>-->
     </extensions>
 
     <actions>
