@@ -55,7 +55,9 @@ class CucumberKotlinExtension : AbstractCucumberExtension() {
                 val psiFile = element.containingFile
                 val psiDirectory = psiFile.parent
                 psiDirectory?.let {
-                    if (isWritableStepLikeFile(psiFile, psiDirectory)) result.add(psiFile)
+                    if (isWritableStepLikeFile(psiFile, psiDirectory)
+                        && (psiFile.name.endsWith("kt"))
+                    ) result.add(psiFile)
                 }
             }
         }
@@ -72,7 +74,7 @@ class CucumberKotlinExtension : AbstractCucumberExtension() {
     override fun getGlues(file: GherkinFile, gluesFromOtherFiles: MutableSet<String>?): MutableCollection<String> {
         val glues = gluesFromOtherFiles ?: ContainerUtil.newHashSet()
 
-        file.accept(object: GherkinRecursiveElementVisitor(){
+        file.accept(object : GherkinRecursiveElementVisitor() {
             override fun visitStep(step: GherkinStep?) {
                 step?.let {
                     val glue = CucumberKotlinUtil.getPackageOfStep(step)
@@ -81,7 +83,7 @@ class CucumberKotlinExtension : AbstractCucumberExtension() {
                     }
                 }
             }
-        } )
+        })
         return glues
     }
 
